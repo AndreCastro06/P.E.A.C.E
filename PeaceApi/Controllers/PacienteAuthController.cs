@@ -1,0 +1,39 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using PEACE.api.DTOs;
+using PEACE.api.Services;
+
+namespace PEACE.api.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class PacienteAuthController : ControllerBase
+{
+    private readonly PacienteAuthService _authService;
+
+    public PacienteAuthController(PacienteAuthService authService)
+    {
+        _authService = authService;
+    }
+
+    [HttpPost("register")]
+    public async Task<IActionResult> Register(RegisterDTO dto)
+    {
+        var result = await _authService.RegisterAsync(dto);
+
+        if (result == null)
+            return BadRequest("Email já cadastrado.");
+
+        return Ok(result);
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login(LoginDTO dto)
+    {
+        var result = await _authService.LoginAsync(dto);
+
+        if (result == null)
+            return Unauthorized("Email ou senha inválidos.");
+
+        return Ok(result);
+    }
+}
