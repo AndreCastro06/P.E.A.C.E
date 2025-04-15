@@ -36,7 +36,7 @@ namespace PEACE.api.Controllers
             _context.Set<PregasCutaneas>().Add(pregas);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetPorAvaliacao), new { avaliacaoId = pregas.AvaliacaoFisicaId }, pregas);
+            return CreatedAtAction(nameof(GetPorAvaliacao), new { avaliacaoId = pregas.AvaliacaoAntropometricaId }, pregas);
         }
 
         [HttpPut("{id}")]
