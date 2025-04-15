@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using PEACE.api.Enums;
 
 namespace PEACE.api.Models
 {
@@ -22,6 +23,12 @@ namespace PEACE.api.Models
         public double? CP { get; set; }   // Peitoral
         public double? CCYU { get; set; } // Cintura umbilical
         public double? CT { get; set; }   // Torácica
+        public double GEB { get; set; }
+        public double GET { get; set; }
+
+        public FatorAtividade FatorAtividade { get; set; }
+
+        public DateTime DataAvaliacao { get; set; } = DateTime.UtcNow;
 
 
     }

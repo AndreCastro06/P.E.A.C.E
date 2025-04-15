@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Models\\Nutricionista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Nutricionista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\peaceapi\\dtos\\avaliacaoantropometricadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:dtos\\avaliacaoantropometricadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Models\\Paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\DTOs\\TabelaTacoDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\TabelaTacoDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\peaceapi\\models\\avaliacaofisica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:models\\avaliacaofisica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Nutricionista.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Models\\Nutricionista.cs",
-              "RelativeDocumentMoniker": "Models\\Nutricionista.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Models\\Nutricionista.cs",
-              "RelativeToolTip": "Models\\Nutricionista.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
+              "Title": "AvaliacaoAntropometricaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\DTOs\\AvaliacaoAntropometricaDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\AvaliacaoAntropometricaDTO.cs",
+              "ToolTip": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\DTOs\\AvaliacaoAntropometricaDTO.cs",
+              "RelativeToolTip": "DTOs\\AvaliacaoAntropometricaDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T05:51:09.109Z",
+              "WhenOpened": "2025-04-15T14:14:05.012Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Paciente.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Models\\Paciente.cs",
-              "RelativeDocumentMoniker": "Models\\Paciente.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Models\\Paciente.cs",
-              "RelativeToolTip": "Models\\Paciente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
+              "Title": "AvaliacaoFisica.cs",
+              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Models\\AvaliacaoFisica.cs",
+              "RelativeDocumentMoniker": "Models\\AvaliacaoFisica.cs",
+              "ToolTip": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Models\\AvaliacaoFisica.cs",
+              "RelativeToolTip": "Models\\AvaliacaoFisica.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwB4AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T05:50:57.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T05:37:04.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TabelaTacoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\DTOs\\TabelaTacoDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\TabelaTacoDTO.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\Peace\\PeaceApi\\DTOs\\TabelaTacoDTO.cs",
-              "RelativeToolTip": "DTOs\\TabelaTacoDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T05:35:07.536Z",
+              "WhenOpened": "2025-04-15T14:13:25.89Z",
               "EditorCaption": ""
             }
           ]

@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\PeaceApi"
+    "\\PeaceApi",
+    "\\PeaceApi\\Controllers",
+    "\\PeaceApi\\Data",
+    "\\PeaceApi\\DTOs",
+    "\\PeaceApi\\Services"
   ],
-  "SelectedNode": "\\PeaceApi",
   "PreviewInSolutionExplorer": false
 }

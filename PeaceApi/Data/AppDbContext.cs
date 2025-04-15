@@ -8,6 +8,7 @@ namespace PEACE.api.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Nutricionista> Nutricionistas { get; set; }
+        public DbSet<Anamnese> Anamneses { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Refeicao> Refeicoes { get; set; }
         public DbSet<Alimento> Alimentos { get; set; }
@@ -19,6 +20,8 @@ namespace PEACE.api.Data
         public DbSet<AcidosGraxosTaco> AcidosGraxosTaco { get; set; }
         public DbSet<AminoacidosTaco> AminoacidosTaco { get; set; }
         public DbSet<AnotacaoRefeicaoHistorico> AnotacoesRefeicaoHistorico { get; set; }
+        public DbSet<GastoEnergeticoHistorico> GastoEnergeticoHistorico { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

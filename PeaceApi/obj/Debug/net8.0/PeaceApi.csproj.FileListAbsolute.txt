@@ -271,10 +271,10 @@ C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\staticwebassets\msbuild.b
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.PeaceApi.props
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.PeaceApi.props
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\PeaceApi.csproj.Up2Date
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\PeaceApi.dll
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\refint\PeaceApi.dll
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\PeaceApi.pdb
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\PeaceApi.genruntimeconfig.cache
 C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\ref\PeaceApi.dll
+C:\Users\Andre\Desktop\Peace\PeaceApi\obj\Debug\net8.0\PeaceApi.sourcelink.json
