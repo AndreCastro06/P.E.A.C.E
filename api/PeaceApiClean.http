@@ -1,4 +1,4 @@
-@PeaceApiClean_HostAddress = http://localhost:5097
+@PeaceApiClean_HostAddress = http://localhost:5907
 
 GET {{PeaceApiClean_HostAddress}}/weatherforecast/
 Accept: application/json

@@ -1,11 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\PeaceApi",
-    "\\PeaceApi\\Controllers",
-    "\\PeaceApi\\Data",
-    "\\PeaceApi\\DTOs",
-    "\\PeaceApi\\Services"
+    ""
   ],
   "PreviewInSolutionExplorer": false
 }

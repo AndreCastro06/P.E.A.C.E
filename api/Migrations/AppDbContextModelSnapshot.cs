@@ -259,14 +259,15 @@ namespace PeaceApi.Migrations
                     b.Property<string>("AversoesAlimentares")
                         .HasColumnType("text");
 
-                    b.Property<string>("ConsumoAguaDiario")
-                        .HasColumnType("text");
+                    b.Property<double?>("ConsumoAguaDiario")
+                        .HasColumnType("double precision");
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("FrequenciaIntestinal")
-                        .HasColumnType("integer");
+                    b.Property<string>("FrequenciaIntestinal")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<bool>("HistoricoFamiliar_DM")
                         .HasColumnType("boolean");
@@ -375,13 +376,17 @@ namespace PeaceApi.Migrations
                     b.Property<DateTime>("DataAvaliacao")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("FatorAtividade")
-                        .HasColumnType("integer");
+                    b.Property<string>("FatorAtividade")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<double>("GEB")
                         .HasColumnType("double precision");
 
                     b.Property<double>("GET")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("IMC")
                         .HasColumnType("double precision");
 
                     b.Property<int>("Idade")
@@ -454,11 +459,13 @@ namespace PeaceApi.Migrations
                     b.Property<double>("Peso")
                         .HasColumnType("double precision");
 
-                    b.Property<int>("Protocolo")
-                        .HasColumnType("integer");
+                    b.Property<string>("Protocolo")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<int>("Sexo")
-                        .HasColumnType("integer");
+                    b.Property<string>("Sexo")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -494,6 +501,70 @@ namespace PeaceApi.Migrations
                     b.HasIndex("RefeicaoId");
 
                     b.ToTable("ItensConsumidos");
+                });
+
+            modelBuilder.Entity("PEACE.api.Models.ItemPlano", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AlimentoId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("QuantidadeGramas")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("RefeicaoPlanoId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlimentoId");
+
+                    b.HasIndex("RefeicaoPlanoId");
+
+                    b.ToTable("ItensPlano");
+                });
+
+            modelBuilder.Entity("PEACE.api.Models.ItemPlanoAlimentar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AlimentoId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Calorias")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Carboidratos")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Gorduras")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Proteinas")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("QuantidadeGramas")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("RefeicaoPlanoId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlimentoId");
+
+                    b.HasIndex("RefeicaoPlanoId");
+
+                    b.ToTable("ItensPlanoAlimentar");
                 });
 
             modelBuilder.Entity("PEACE.api.Models.LoginAttempt", b =>
@@ -585,6 +656,31 @@ namespace PeaceApi.Migrations
                     b.ToTable("NutrientesUSDA");
                 });
 
+            modelBuilder.Entity("PEACE.api.Models.PlanoAlimentar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Objetivo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("PacienteId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PacienteId");
+
+                    b.ToTable("PlanosAlimentares");
+                });
+
             modelBuilder.Entity("PEACE.api.Models.PregasCutaneas", b =>
                 {
                     b.Property<int>("Id")
@@ -629,6 +725,31 @@ namespace PeaceApi.Migrations
                         .IsUnique();
 
                     b.ToTable("PregasCutaneas");
+                });
+
+            modelBuilder.Entity("PEACE.api.Models.RefeicaoPlano", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<TimeSpan?>("Horario")
+                        .HasColumnType("interval");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("PlanoAlimentarId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlanoAlimentarId");
+
+                    b.ToTable("RefeicoesPlano");
                 });
 
             modelBuilder.Entity("PEACE.api.Models.TabelaAlimentoUSDA", b =>
@@ -915,6 +1036,44 @@ namespace PeaceApi.Migrations
                     b.Navigation("Refeicao");
                 });
 
+            modelBuilder.Entity("PEACE.api.Models.ItemPlano", b =>
+                {
+                    b.HasOne("Alimento", "Alimento")
+                        .WithMany()
+                        .HasForeignKey("AlimentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PEACE.api.Models.RefeicaoPlano", "Refeicao")
+                        .WithMany("Itens")
+                        .HasForeignKey("RefeicaoPlanoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Alimento");
+
+                    b.Navigation("Refeicao");
+                });
+
+            modelBuilder.Entity("PEACE.api.Models.ItemPlanoAlimentar", b =>
+                {
+                    b.HasOne("Alimento", "Alimento")
+                        .WithMany()
+                        .HasForeignKey("AlimentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PEACE.api.Models.RefeicaoPlano", "RefeicaoPlano")
+                        .WithMany()
+                        .HasForeignKey("RefeicaoPlanoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Alimento");
+
+                    b.Navigation("RefeicaoPlano");
+                });
+
             modelBuilder.Entity("PEACE.api.Models.NutrienteUSDA", b =>
                 {
                     b.HasOne("PEACE.api.Models.TabelaAlimentoUSDA", "AlimentoUSDA")
@@ -926,6 +1085,17 @@ namespace PeaceApi.Migrations
                     b.Navigation("AlimentoUSDA");
                 });
 
+            modelBuilder.Entity("PEACE.api.Models.PlanoAlimentar", b =>
+                {
+                    b.HasOne("Paciente", "Paciente")
+                        .WithMany()
+                        .HasForeignKey("PacienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Paciente");
+                });
+
             modelBuilder.Entity("PEACE.api.Models.PregasCutaneas", b =>
                 {
                     b.HasOne("PEACE.api.Models.AvaliacaoAntropometrica", "AvaliacaoAntropometrica")
@@ -935,6 +1105,17 @@ namespace PeaceApi.Migrations
                         .IsRequired();
 
                     b.Navigation("AvaliacaoAntropometrica");
+                });
+
+            modelBuilder.Entity("PEACE.api.Models.RefeicaoPlano", b =>
+                {
+                    b.HasOne("PEACE.api.Models.PlanoAlimentar", "PlanoAlimentar")
+                        .WithMany("Refeicoes")
+                        .HasForeignKey("PlanoAlimentarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PlanoAlimentar");
                 });
 
             modelBuilder.Entity("Paciente", b =>
@@ -971,6 +1152,16 @@ namespace PeaceApi.Migrations
             modelBuilder.Entity("PEACE.api.Models.Nutricionista", b =>
                 {
                     b.Navigation("Pacientes");
+                });
+
+            modelBuilder.Entity("PEACE.api.Models.PlanoAlimentar", b =>
+                {
+                    b.Navigation("Refeicoes");
+                });
+
+            modelBuilder.Entity("PEACE.api.Models.RefeicaoPlano", b =>
+                {
+                    b.Navigation("Itens");
                 });
 
             modelBuilder.Entity("PEACE.api.Models.TabelaAlimentoUSDA", b =>
