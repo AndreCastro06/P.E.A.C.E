@@ -166,7 +166,13 @@ namespace PEACE.api.Services
             sb.AppendLine($"Carboidratos: {dto.TotaisDoDia.Carboidratos}g");
             sb.AppendLine($"Gorduras: {dto.TotaisDoDia.Gorduras}g");
 
-            // Criar o PDF com PdfSharpCore ou DinkToPdf no futuro. Por enquanto, simulamos com bytes de um .txt (mock simples)
+
+            sb.AppendLine();
+            sb.AppendLine($"Nutricionista Responsável: {dto.NomeNutricionista}");
+            sb.AppendLine($"CRN: {dto.CRN ?? "Não informado"}");
+            sb.AppendLine($"E-mail: {dto.EmailNutricionista ?? "Não informado"}");
+
+            // Criar o PDF com PdfSharpCore.
             var conteudo = sb.ToString();
             var bytes = Encoding.UTF8.GetBytes(conteudo);
 

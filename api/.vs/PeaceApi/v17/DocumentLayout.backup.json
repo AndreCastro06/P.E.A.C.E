@@ -7,32 +7,24 @@
       "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:services\\planoalimentarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\dtos\\refeicaoplanodetalhadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:dtos\\refeicaoplanodetalhadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\models\\refeicao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:models\\refeicao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\dtos\\planoalimentardetalhadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:dtos\\planoalimentardetalhadodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\models\\planoalimentar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:models\\planoalimentar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\models\\itemplanoalimentar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:models\\itemplanoalimentar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\services\\avaliacaoantropometricaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:services\\avaliacaoantropometricaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\controllers\\planoalimentarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:controllers\\planoalimentarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\models\\tabelataco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:models\\tabelataco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|c:\\users\\andre\\desktop\\peace\\api\\dtos\\composicaocorporalhistoricodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA49404-EF12-BC78-67C5-083FD23E1E7E}|PeaceApi.csproj|solutionrelative:dtos\\composicaocorporalhistoricodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,98 +34,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RefeicaoPlanoDetalhadoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\DTOs\\RefeicaoPlanoDetalhadoDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\RefeicaoPlanoDetalhadoDTO.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\DTOs\\RefeicaoPlanoDetalhadoDTO.cs",
-              "RelativeToolTip": "DTOs\\RefeicaoPlanoDetalhadoDTO.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T02:32:55.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "PlanoAlimentarDetalhadoDTO.cs",
               "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\DTOs\\PlanoAlimentarDetalhadoDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\PlanoAlimentarDetalhadoDTO.cs",
               "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\DTOs\\PlanoAlimentarDetalhadoDTO.cs",
               "RelativeToolTip": "DTOs\\PlanoAlimentarDetalhadoDTO.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAywAgAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T02:25:16.219Z",
+              "WhenOpened": "2025-04-27T02:28:47.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Refeicao.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Models\\Refeicao.cs",
-              "RelativeDocumentMoniker": "Models\\Refeicao.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Models\\Refeicao.cs",
-              "RelativeToolTip": "Models\\Refeicao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T02:15:49.453Z",
+              "WhenOpened": "2025-04-27T02:27:33.822Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlanoAlimentar.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Models\\PlanoAlimentar.cs",
-              "RelativeDocumentMoniker": "Models\\PlanoAlimentar.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Models\\PlanoAlimentar.cs",
-              "RelativeToolTip": "Models\\PlanoAlimentar.cs",
+              "DocumentIndex": 3,
+              "Title": "AvaliacaoAntropometricaService.cs",
+              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Services\\AvaliacaoAntropometricaService.cs",
+              "RelativeDocumentMoniker": "Services\\AvaliacaoAntropometricaService.cs",
+              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Services\\AvaliacaoAntropometricaService.cs",
+              "RelativeToolTip": "Services\\AvaliacaoAntropometricaService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T02:14:54.162Z",
+              "WhenOpened": "2025-04-27T02:26:18.836Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ItemPlanoAlimentar.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Models\\ItemPlanoAlimentar.cs",
-              "RelativeDocumentMoniker": "Models\\ItemPlanoAlimentar.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Models\\ItemPlanoAlimentar.cs",
-              "RelativeToolTip": "Models\\ItemPlanoAlimentar.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAiwA4AAAArAAAAAAAAAA==",
+              "Title": "ComposicaoCorporalHistoricoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\DTOs\\ComposicaoCorporalHistoricoDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\ComposicaoCorporalHistoricoDTO.cs",
+              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\DTOs\\ComposicaoCorporalHistoricoDTO.cs",
+              "RelativeToolTip": "DTOs\\ComposicaoCorporalHistoricoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T02:14:45.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T02:55:04.554Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAzwBoAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "PlanoAlimentarController.cs",
+              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Controllers\\PlanoAlimentarController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PlanoAlimentarController.cs",
+              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Controllers\\PlanoAlimentarController.cs",
+              "RelativeToolTip": "Controllers\\PlanoAlimentarController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAADwvysAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T02:14:36.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TabelaTaco.cs",
-              "DocumentMoniker": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Models\\TabelaTaco.cs",
-              "RelativeDocumentMoniker": "Models\\TabelaTaco.cs",
-              "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Models\\TabelaTaco.cs",
-              "RelativeToolTip": "Models\\TabelaTaco.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T02:04:18.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T02:53:19.984Z"
             },
             {
               "$type": "Document",
@@ -143,7 +107,7 @@
               "RelativeDocumentMoniker": "Services\\PlanoAlimentarService.cs",
               "ToolTip": "C:\\Users\\Andre\\Desktop\\PEACE\\api\\Services\\PlanoAlimentarService.cs",
               "RelativeToolTip": "Services\\PlanoAlimentarService.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAwwAMAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAcwK0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T02:01:17.411Z",
               "EditorCaption": ""

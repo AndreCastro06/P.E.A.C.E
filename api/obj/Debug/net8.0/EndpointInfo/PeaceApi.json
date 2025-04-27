@@ -827,6 +827,100 @@
         }
       }
     },
+    "/api/PlanoAlimentar": {
+      "post": {
+        "tags": [
+          "PlanoAlimentar"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlanoAlimentarDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlanoAlimentarDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPlanoAlimentarDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PlanoAlimentar/{planoId}": {
+      "get": {
+        "tags": [
+          "PlanoAlimentar"
+        ],
+        "parameters": [
+          {
+            "name": "planoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanoAlimentarDetalhadoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanoAlimentarDetalhadoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanoAlimentarDetalhadoDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PlanoAlimentar/{planoId}/exportar": {
+      "get": {
+        "tags": [
+          "PlanoAlimentar"
+        ],
+        "parameters": [
+          {
+            "name": "planoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/PregasCutaneas/avaliacao/{avaliacaoId}": {
       "get": {
         "tags": [
@@ -2272,6 +2366,27 @@
         },
         "additionalProperties": false
       },
+      "CriarPlanoAlimentarDTO": {
+        "type": "object",
+        "properties": {
+          "pacienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "objetivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "refeicoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RefeicaoPlanoDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "FatorAtividade": {
         "enum": [
           120,
@@ -2330,6 +2445,41 @@
           "quantidade": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemPlanoAlimentarDTO": {
+        "type": "object",
+        "properties": {
+          "alimentoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantidadeGramas": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemPlanoDetalhadoDTO": {
+        "type": "object",
+        "properties": {
+          "alimentoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantidadeGramas": {
+            "type": "number",
+            "format": "double"
+          },
+          "nomeAlimento": {
+            "type": "string",
+            "nullable": true
+          },
+          "macros": {
+            "$ref": "#/components/schemas/ResumoMacrosDTO"
           }
         },
         "additionalProperties": false
@@ -2491,6 +2641,42 @@
         },
         "additionalProperties": false
       },
+      "PlanoAlimentarDetalhadoDTO": {
+        "type": "object",
+        "properties": {
+          "nomePaciente": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomeNutricionista": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailNutricionista": {
+            "type": "string",
+            "nullable": true
+          },
+          "crn": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataCriacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "refeicoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RefeicaoPlanoDetalhadoDTO"
+            },
+            "nullable": true
+          },
+          "totaisDoDia": {
+            "$ref": "#/components/schemas/ResumoMacrosDTO"
+          }
+        },
+        "additionalProperties": false
+      },
       "PregasCutaneas": {
         "required": [
           "avaliacaoAntropometricaId"
@@ -2599,6 +2785,53 @@
         },
         "additionalProperties": false
       },
+      "RefeicaoPlanoDTO": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "horario": {
+            "type": "string",
+            "format": "date-span",
+            "nullable": true
+          },
+          "itens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemPlanoAlimentarDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefeicaoPlanoDetalhadoDTO": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "horario": {
+            "type": "string",
+            "format": "date-span",
+            "nullable": true
+          },
+          "itens": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemPlanoDetalhadoDTO"
+            },
+            "nullable": true
+          },
+          "totais": {
+            "$ref": "#/components/schemas/ResumoMacrosDTO"
+          }
+        },
+        "additionalProperties": false
+      },
       "RegisterDTO": {
         "required": [
           "email",
@@ -2640,6 +2873,28 @@
             "format": "double"
           },
           "tmb": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResumoMacrosDTO": {
+        "type": "object",
+        "properties": {
+          "calorias": {
+            "type": "number",
+            "format": "double"
+          },
+          "proteinas": {
+            "type": "number",
+            "format": "double"
+          },
+          "carboidratos": {
+            "type": "number",
+            "format": "double"
+          },
+          "gorduras": {
             "type": "number",
             "format": "double"
           }

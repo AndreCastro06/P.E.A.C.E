@@ -455,6 +455,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PEACE.api.Controllers.PlanoAlimentarController",
+    "Method": "Criar",
+    "RelativePath": "api/PlanoAlimentar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CriarPlanoAlimentarDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PEACE.api.Controllers.PlanoAlimentarController",
+    "Method": "ObterDetalhado",
+    "RelativePath": "api/PlanoAlimentar/{planoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "planoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PEACE.api.DTOs.PlanoAlimentarDetalhadoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PEACE.api.Controllers.PlanoAlimentarController",
+    "Method": "ExportarPdf",
+    "RelativePath": "api/PlanoAlimentar/{planoId}/exportar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "planoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PEACE.api.Controllers.PregasCutaneasController",
     "Method": "Criar",
     "RelativePath": "api/PregasCutaneas",
