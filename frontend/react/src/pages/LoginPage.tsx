@@ -23,9 +23,9 @@ export default function LoginPage() {
 
       // Redirecionamento baseado na role:
       if (role === "Nutricionista") {
-        window.location.href = "/painel-nutri";
+        window.location.href = "/loginpage";
       } else if (role === "Paciente") {
-        window.location.href = "/painel-paciente";
+        window.location.href = "/lobinpage";
       } else {
         console.warn("Tipo de usuário não reconhecido:", role);
       }
