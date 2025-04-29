@@ -2,38 +2,46 @@
 using PEACE.api.DTOs;
 using PEACE.api.Services;
 
-namespace PEACE.api.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-public class PacienteAuthController : ControllerBase
+namespace PEACE.api.Controllers
 {
-    private readonly PacienteAuthService _authService;
-
-    public PacienteAuthController(PacienteAuthService authService)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class PacienteAuthController : ControllerBase
     {
-        _authService = authService;
-    }
+        private readonly PacienteAuthService _authService;
 
-    [HttpPost("register")]
-    public async Task<IActionResult> Register(RegisterDTO dto)
-    {
-        var result = await _authService.RegisterAsync(dto);
+        public PacienteAuthController(PacienteAuthService authService)
+        {
+            _authService = authService;
+        }
 
-        if (result == null)
-            return BadRequest("Email já cadastrado.");
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(RegisterPacienteDTO dto)
+        {
+            var result = await _authService.RegisterAsync(dto);
 
-        return Ok(result);
-    }
+            if (result == null)
+                return BadRequest("Email já cadastrado.");
 
-    [HttpPost("login")]
-    public async Task<IActionResult> Login(LoginDTO dto)
-    {
-        var result = await _authService.LoginAsync(dto);
+            return Ok(new
+            {
+                result.Nome,
+                result.Email
+            });
+        }
 
-        if (result == null)
-            return Unauthorized("Email ou senha inválidos.");
 
-        return Ok(result);
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginDTO dto)
+        {
+            var result = await _authService.LoginAsync(dto);
+
+            if (result == null)
+                return Unauthorized("Email ou senha inválidos.");
+
+            return Ok(result);
+        }
+
+
     }
 }

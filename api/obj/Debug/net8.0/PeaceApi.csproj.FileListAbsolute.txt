@@ -339,3 +339,4 @@ C:\Users\Andre\Desktop\PEACE\Api\bin\Debug\net8.0\runtimes\win-x86\native\libgcc
 C:\Users\Andre\Desktop\PEACE\Api\bin\Debug\net8.0\runtimes\win-x86\native\libstdc++-6.dll
 C:\Users\Andre\Desktop\PEACE\Api\bin\Debug\net8.0\runtimes\win-x86\native\libwinpthread-1.dll
 C:\Users\Andre\Desktop\PEACE\Api\bin\Debug\net8.0\runtimes\win-x86\native\qpdf.dll
+C:\Users\Andre\Desktop\PEACE\api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

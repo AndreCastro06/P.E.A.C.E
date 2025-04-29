@@ -245,6 +245,22 @@
     ]
   },
   {
+    "ContainingType": "PEACE.api.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PEACE.api.DTOs.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PEACE.api.Controllers.AvaliacaoAntropometricaController",
     "Method": "Criar",
     "RelativePath": "api/AvaliacaoAntropometrica",
@@ -416,7 +432,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "PEACE.api.DTOs.RegisterDTO",
+        "Type": "PEACE.api.DTOs.RegisterNutricionistaDTO",
         "IsRequired": true
       }
     ],
@@ -448,7 +464,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "PEACE.api.DTOs.RegisterDTO",
+        "Type": "PEACE.api.DTOs.RegisterPacienteDTO",
         "IsRequired": true
       }
     ],
@@ -621,7 +637,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "PEACE.api.DTOs.RegisterDTO",
+        "Type": "PEACE.api.DTOs.RegisterNutricionistaDTO",
         "IsRequired": true
       }
     ],
@@ -673,7 +689,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "PEACE.api.DTOs.RegisterDTO",
+        "Type": "PEACE.api.DTOs.RegisterPacienteDTO",
         "IsRequired": true
       }
     ],

@@ -2,38 +2,48 @@
 using PEACE.api.DTOs;
 using PEACE.api.Services;
 
-namespace PEACE.api.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-public class NutricionistaAuthController : ControllerBase
+namespace PEACE.api.Controllers
 {
-    private readonly NutricionistaAuthService _authService;
-
-    public NutricionistaAuthController(NutricionistaAuthService authService)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class NutricionistaAuthController : ControllerBase
     {
-        _authService = authService;
-    }
+        private readonly NutricionistaAuthService _authService;
 
-    [HttpPost("register")]
-    public async Task<IActionResult> Register(RegisterDTO dto)
-    {
-        var result = await _authService.RegisterAsync(dto);
+        public NutricionistaAuthController(NutricionistaAuthService authService)
+        {
+            _authService = authService;
+        }
 
-        if (result == null)
-            return BadRequest("Email já cadastrado.");
 
-        return Ok(result);
-    }
 
-    [HttpPost("login")]
-    public async Task<IActionResult> Login(LoginDTO dto)
-    {
-        var result = await _authService.LoginAsync(dto);
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(RegisterNutricionistaDTO dto)
+        {
+            var result = await _authService.RegisterAsync(dto);
 
-        if (result == null)
-            return Unauthorized("Email ou senha inválidos.");
+            if (result == null)
+                return BadRequest("Email já cadastrado.");
 
-        return Ok(result);
+            return Ok(new
+            {
+                result.Nome,
+                result.Email,
+                result.CRN
+            });
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginDTO dto)
+        {
+            var result = await _authService.LoginAsync(dto);
+
+            if (result == null)
+                return Unauthorized("Email ou senha inválidos.");
+
+            return Ok(result);
+
+        }
+
     }
 }

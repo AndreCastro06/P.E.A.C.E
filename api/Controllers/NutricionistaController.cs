@@ -25,7 +25,7 @@ namespace PEACE.api.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<Nutricionista>> Register(RegisterDTO request)
+        public async Task<ActionResult<Nutricionista>> Register(RegisterNutricionistaDTO request)
         {
             if (await _context.Nutricionistas.AnyAsync(n => n.Email == request.Email))
                 return BadRequest("Nutricionista já registrado com este email.");
@@ -36,8 +36,10 @@ namespace PEACE.api.Controllers
             {
                 Nome = request.Nome,
                 Email = request.Email,
+                CRN = request.CRN,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt
+                
             };
 
             _context.Nutricionistas.Add(nutricionista);

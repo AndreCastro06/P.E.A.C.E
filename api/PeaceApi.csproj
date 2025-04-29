@@ -6,7 +6,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<!-- 👈 Adicionado aqui -->
-	</PropertyGroup>
+	  <UserSecretsId>0f424824-ca77-42e2-b4da-d14b80238516</UserSecretsId>
+  </PropertyGroup>
 
 	<ItemGroup>
 	  <Compile Remove="Services\CalculoGastoEnergeticoService.cs" />

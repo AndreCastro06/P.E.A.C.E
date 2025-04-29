@@ -12,16 +12,15 @@ builder.Services.AddScoped<NutricionistaAuthService>();
 builder.Services.AddScoped<PacienteAuthService>();
 builder.Services.AddScoped<AvaliacaoAntropometricaService>();
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-var jwtKey = builder.Configuration["Jwt:Key"]
-    ?? throw new ArgumentNullException("Jwt:Key is missing in configuration");
+
+var jwtKey = builder.Configuration["Jwt:Key"];
 
 var jwtIssuer = builder.Configuration["Jwt:Issuer"]
     ?? throw new ArgumentNullException("Jwt:Issuer is missing in configuration");
 
 var jwtAudience = builder.Configuration["Jwt:Audience"]
     ?? throw new ArgumentNullException("Jwt:Audience is missing in configuration");
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -46,6 +45,20 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connStr);
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins(
+            "https://localhost:5173",
+            "https://localhost:5174",
+            "https://localhost:5175"
+        )
+        .WithHeaders("Authorization", "Content-Type") 
+        .WithMethods("GET", "POST");                   
+    });
+});
+
 builder.Services.AddAuthorization(); 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -65,9 +78,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowFrontend"); 
 app.UseHttpsRedirection();
-
-app.UseAuthentication(); 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

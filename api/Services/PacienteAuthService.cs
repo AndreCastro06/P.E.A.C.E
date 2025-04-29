@@ -1,94 +1,86 @@
-﻿using PEACE.api.Models;
-using PEACE.api.DTOs;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PEACE.api.Data;
-using System;
+using PEACE.api.DTOs;
+using PEACE.api.Models;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 
-namespace PEACE.api.Services;
-
-public class PacienteAuthService
+namespace PEACE.api.Services
 {
-    private readonly AppDbContext _context;
-
-    public PacienteAuthService(AppDbContext context)
+    public class PacienteAuthService
     {
-        _context = context;
-    }
+        private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-    public async Task<Paciente?> RegisterAsync(RegisterDTO dto)
-    {
-        if (_context.Pacientes.Any(u => u.Email == dto.Email))
-            return null;
-
-        PasswordHasher.CreatePasswordHash(dto.Password, out byte[] hash, out byte[] salt);
-
-        var paciente = new Paciente
+        public PacienteAuthService(AppDbContext context, IConfiguration configuration)
         {
-            Nome = dto.Nome,
-            Email = dto.Email,
-            PasswordHash = hash,
-            PasswordSalt = salt
-        };
-
-        _context.Pacientes.Add(paciente);
-        await _context.SaveChangesAsync();
-
-        return paciente;
-    }
-
-    public async Task<Paciente?> LoginAsync(LoginDTO dto)
-    {
-        var attempt = await _context.LoginAttempts.FirstOrDefaultAsync(a => a.Email == dto.Email);
-
-        if (attempt != null && attempt.LockoutEnd.HasValue && attempt.LockoutEnd > DateTime.UtcNow)
-        {
-            return null; // Está bloqueado
+            _context = context;
+            _configuration = configuration;
         }
 
-        var paciente = await _context.Pacientes.FirstOrDefaultAsync(u => u.Email == dto.Email);
-
-        if (paciente == null || paciente.PasswordHash == null || paciente.PasswordSalt == null)
-            return await RegisterFail(dto.Email);
-
-        bool isValid = PasswordHasher.VerifyPasswordHash(dto.Password, paciente.PasswordHash, paciente.PasswordSalt);
-
-        if (!isValid)
-            return await RegisterFail(dto.Email);
-
-        // Sucesso no login → limpar tentativas
-        if (attempt != null)
-            _context.LoginAttempts.Remove(attempt);
-
-        await _context.SaveChangesAsync();
-        return paciente;
-    }
-
-    private async Task<Paciente?> RegisterFail(string email)
-    {
-        var attempt = await _context.LoginAttempts.FirstOrDefaultAsync(a => a.Email == email);
-
-        if (attempt == null)
+        public async Task<Paciente?> RegisterAsync(RegisterPacienteDTO dto)
         {
-            attempt = new LoginAttempt
+            if (await _context.Pacientes.AnyAsync(p => p.Email == dto.Email))
+                return null;
+
+            PasswordHasher.CreatePasswordHash(dto.Password, out byte[] hash, out byte[] salt);
+
+            var paciente = new Paciente
             {
-                Email = email,
-                FailedCount = 1,
-                LastAttempt = DateTime.UtcNow
+                Nome = dto.Nome,
+                Email = dto.Email,
+                PasswordHash = hash,
+                PasswordSalt = salt,
+                NutricionistaId = null
             };
-            _context.LoginAttempts.Add(attempt);
+
+            _context.Pacientes.Add(paciente);
+            await _context.SaveChangesAsync();
+
+            return paciente;
         }
-        else
+
+        public async Task<LoginResponseDTO?> LoginAsync(LoginDTO dto)
         {
-            attempt.FailedCount++;
-            attempt.LastAttempt = DateTime.UtcNow;
+            var paciente = await _context.Pacientes.FirstOrDefaultAsync(u => u.Email == dto.Email);
 
-            if (attempt.FailedCount >= 3)
+            if (paciente == null || paciente.PasswordHash == null || paciente.PasswordSalt == null)
+                return null;
+
+            bool isValid = PasswordHasher.VerifyPasswordHash(dto.Password, paciente.PasswordHash, paciente.PasswordSalt);
+
+            if (!isValid)
+                return null;
+
+            var token = GerarTokenJwt(paciente);
+
+            return new LoginResponseDTO
             {
-                attempt.LockoutEnd = DateTime.UtcNow.AddMinutes(5);
-            }
+                Token = token,
+                Nome = paciente.Nome,
+                Role = "Paciente"
+            };
         }
 
-        await _context.SaveChangesAsync();
-        return null;
+        private string GerarTokenJwt(Paciente paciente)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim("id", paciente.Id.ToString()),
+                    new Claim(ClaimTypes.Name, paciente.Nome),
+                    new Claim(ClaimTypes.Role, "Paciente")
+                }),
+                Expires = DateTime.UtcNow.AddHours(8),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
     }
 }

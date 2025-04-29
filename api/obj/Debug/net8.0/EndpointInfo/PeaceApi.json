@@ -438,6 +438,37 @@
         }
       }
     },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/AvaliacaoAntropometrica": {
       "post": {
         "tags": [
@@ -712,17 +743,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterNutricionistaDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterNutricionistaDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterNutricionistaDTO"
               }
             }
           }
@@ -774,17 +805,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterPacienteDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterPacienteDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterPacienteDTO"
               }
             }
           }
@@ -1060,17 +1091,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterNutricionistaDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterNutricionistaDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterNutricionistaDTO"
               }
             }
           }
@@ -1156,17 +1187,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterPacienteDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterPacienteDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterDTO"
+                "$ref": "#/components/schemas/RegisterPacienteDTO"
               }
             }
           }
@@ -2517,6 +2548,7 @@
       },
       "Nutricionista": {
         "required": [
+          "crn",
           "email",
           "nome"
         ],
@@ -2531,6 +2563,10 @@
             "nullable": true
           },
           "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "crn": {
             "type": "string",
             "nullable": true
           },
@@ -2733,6 +2769,11 @@
             "type": "number",
             "format": "double",
             "nullable": true
+          },
+          "pctx": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2832,7 +2873,36 @@
         },
         "additionalProperties": false
       },
-      "RegisterDTO": {
+      "RegisterNutricionistaDTO": {
+        "required": [
+          "crn",
+          "email",
+          "nome",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 6,
+            "type": "string"
+          },
+          "crn": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterPacienteDTO": {
         "required": [
           "email",
           "nome",
@@ -2841,8 +2911,7 @@
         "type": "object",
         "properties": {
           "nome": {
-            "maxLength": 100,
-            "minLength": 0,
+            "minLength": 1,
             "type": "string"
           },
           "email": {

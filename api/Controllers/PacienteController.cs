@@ -25,7 +25,7 @@ namespace PEACE.api.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<Paciente>> Register(RegisterDTO request)
+        public async Task<ActionResult<Paciente>> Register(RegisterPacienteDTO request)
         {
             if (await _context.Pacientes.AnyAsync(p => p.Email == request.Email))
                 return BadRequest("Paciente já registrado com este email.");
