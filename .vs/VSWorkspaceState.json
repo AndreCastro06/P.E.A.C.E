@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\api",
+    "\\api\\Data",
+    "\\api\\DTOs",
+    "\\api\\Services"
   ],
+  "SelectedNode": "\\api\\PeaceApi.sln",
   "PreviewInSolutionExplorer": false
 }

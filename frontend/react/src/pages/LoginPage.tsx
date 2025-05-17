@@ -21,19 +21,36 @@ export default function LoginPage() {
       localStorage.setItem("nome", nome);
       localStorage.setItem("role", role);
 
-      // Redirecionamento baseado na role:
+
       if (role === "Nutricionista") {
-        window.location.href = "/loginpage";
+        console.log("Login como Nutricionista");
+        // não redireciona
       } else if (role === "Paciente") {
-        window.location.href = "/lobinpage";
+        console.log("Login como Paciente");
+        // não redireciona
       } else {
         console.warn("Tipo de usuário não reconhecido:", role);
       }
     } catch (error: any) {
       console.error("Erro no login:", error);
-      setErro("Usuário ou senha inválidos.");
-    }
-  };
+       setErro("Usuário ou senha inválidos.");
+       }
+
+      }
+    //   // Redirecionamento baseado na role:
+    //   if (role === "Nutricionista") {
+    //     window.location.href = "/LoginPage";
+    //   } else if (role === "Paciente") {
+    //     window.location.href = "/LoginPage";
+    //   } else {
+    //     console.warn("Tipo de usuário não reconhecido:", role);
+    //   }
+    // } catch (error: any) {
+    //   console.error("Erro no login:", error);
+    //   setErro("Usuário ou senha inválidos.");
+    // }
+  //};
+
 
   return (
     <div className="login-container">

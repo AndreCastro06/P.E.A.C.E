@@ -25,7 +25,7 @@ namespace PEACE.api.Controllers
 
             return Ok(new
             {
-                result.Nome,
+                result.NomeCompleto,
                 result.Email
             });
         }

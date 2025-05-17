@@ -34,7 +34,7 @@ namespace PEACE.api.Controllers
 
             var paciente = new Paciente
             {
-                Nome = request.Nome,
+                NomeCompleto = request.NomeCompleto,
                 Email = request.Email,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,

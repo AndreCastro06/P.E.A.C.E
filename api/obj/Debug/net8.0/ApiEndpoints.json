@@ -339,6 +339,46 @@
     ]
   },
   {
+    "ContainingType": "PEACE.api.Controllers.DropdownSuplementacaoController",
+    "Method": "ListarPacientes",
+    "RelativePath": "api/DropdownSuplementacao/pacientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PEACE.api.DTOs.PacienteDadosSuplementacaoDTO, PeaceApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PEACE.api.Controllers.DropdownSuplementacaoController",
+    "Method": "ListarPlanos",
+    "RelativePath": "api/DropdownSuplementacao/planos-alimentares",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PEACE.api.DTOs.PlanoResumoDTO, PeaceApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "PEACE.api.Controllers.ItemConsumidoController",
     "Method": "Create",
     "RelativePath": "api/ItemConsumido",
@@ -834,6 +874,95 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PEACE.api.Controllers.SuplementoController",
+    "Method": "Criar",
+    "RelativePath": "api/Suplemento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PEACE.api.DTOs.SuplementoRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PEACE.api.DTOs.SuplementoResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PEACE.api.Controllers.SuplementoController",
+    "Method": "Editar",
+    "RelativePath": "api/Suplemento/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PEACE.api.DTOs.SuplementoRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PEACE.api.Controllers.SuplementoController",
+    "Method": "Excluir",
+    "RelativePath": "api/Suplemento/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PEACE.api.Controllers.SuplementoController",
+    "Method": "ListarPorPaciente",
+    "RelativePath": "api/Suplemento/paciente/{pacienteId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pacienteId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PEACE.api.DTOs.SuplementoResponseDTO, PeaceApi, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "PEACE.api.Controllers.TabelaTacoController",

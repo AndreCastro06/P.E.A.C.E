@@ -34,9 +34,9 @@ namespace PEACE.api.Controllers
 
             var nutricionista = new Nutricionista
             {
-                Nome = request.Nome,
-                Email = request.Email,
-                CRN = request.CRN,
+                NomeCompleto= request.NomeCompleto!,
+                Email = request.Email!,
+                CRN = request.CRN!,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt
                 

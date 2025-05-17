@@ -13,6 +13,7 @@ namespace PEACE.api.Data
         public DbSet<Refeicao> Refeicoes { get; set; }
         public DbSet<Alimento> Alimentos { get; set; }
         public DbSet<ItemConsumido> ItensConsumidos { get; set; }
+        public DbSet<Suplemento> Suplementos { get; set; }
         public DbSet<LoginAttempt> LoginAttempts { get; set; }
         public DbSet<TabelaAlimentoUSDA> AlimentosUSDA { get; set; }
         public DbSet<NutrienteUSDA> NutrientesUSDA { get; set; }
@@ -27,6 +28,7 @@ namespace PEACE.api.Data
         public DbSet<RefeicaoPlano> RefeicoesPlano { get; set; }
         public DbSet<ItemPlanoAlimentar> ItensPlanoAlimentar { get; set; }
         public DbSet<ItemPlano> ItensPlano { get; set; }
+        public DbSet<PlanoAlimentar> PlanoAlimentar { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

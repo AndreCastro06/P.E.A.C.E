@@ -74,8 +74,8 @@ namespace PEACE.api.Services
 
             var dto = new PlanoAlimentarDetalhadoDTO
             {
-                NomePaciente = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(plano.Paciente?.Nome?.Trim().ToLower() ?? "Paciente"),
-                NomeNutricionista = plano.Paciente?.Nutricionista?.Nome ?? "Nutricionista",
+                NomePaciente = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(plano.Paciente?.NomeCompleto?.Trim().ToLower() ?? "Paciente"),
+                NomeNutricionista = plano.Paciente?.Nutricionista?.NomeCompleto ?? "Nutricionista",
                 DataCriacao = plano.DataCriacao,
                 Refeicoes = new List<RefeicaoPlanoDetalhadoDTO>(),
                 TotaisDoDia = new ResumoMacrosDTO()

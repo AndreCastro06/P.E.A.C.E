@@ -29,7 +29,7 @@ namespace PEACE.api.Services
 
             var nutri = new Nutricionista
             {
-                Nome = dto.Nome,
+                NomeCompleto = dto.NomeCompleto,
                 Email = dto.Email,
                 CRN = dto.CRN,
                 PasswordHash = hash,
@@ -66,13 +66,13 @@ namespace PEACE.api.Services
 
             await _context.SaveChangesAsync();
 
-            // Gerar o Token JWT
+            // Gera o Token JWT
             var token = GerarTokenJwt(nutri);
 
             return new LoginResponseDTO
             {
                 Token = token,
-                Nome = nutri.Nome,
+                Nome = nutri.NomeCompleto,
                 Role = "Nutricionista"
             };
         }
@@ -113,7 +113,7 @@ namespace PEACE.api.Services
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim("id", nutricionista.Id.ToString()),
-                    new Claim(ClaimTypes.Name, nutricionista.Nome),
+                    new Claim(ClaimTypes.Name, nutricionista.NomeCompleto),
                     new Claim(ClaimTypes.Role, "Nutricionista")
                 }),
                 Expires = DateTime.UtcNow.AddHours(8),

@@ -29,7 +29,7 @@ namespace PEACE.api.Services
 
             var paciente = new Paciente
             {
-                Nome = dto.Nome,
+                NomeCompleto = dto.NomeCompleto,
                 Email = dto.Email,
                 PasswordHash = hash,
                 PasswordSalt = salt,
@@ -59,7 +59,7 @@ namespace PEACE.api.Services
             return new LoginResponseDTO
             {
                 Token = token,
-                Nome = paciente.Nome,
+                Nome = paciente.NomeCompleto,
                 Role = "Paciente"
             };
         }
@@ -73,7 +73,7 @@ namespace PEACE.api.Services
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim("id", paciente.Id.ToString()),
-                    new Claim(ClaimTypes.Name, paciente.Nome),
+                    new Claim(ClaimTypes.Name, paciente.NomeCompleto),
                     new Claim(ClaimTypes.Role, "Paciente")
                 }),
                 Expires = DateTime.UtcNow.AddHours(8),
